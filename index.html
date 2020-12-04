@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Charter Up Calculator</title>
+</head>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <nav class="nav nav-masthead justify-content-center">
+                    <nav class="navbar navbar-expand-sm navbar-light">
+                        <a class="navbar-brand" href="https://www.charterup.com/">charterUP</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample03">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Charters</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Overview</a>
+                                        <a class="dropdown-item" href="#">For Schools</a>
+                                        <a class="dropdown-item" href="#">For Teams</a>
+                                        <a class="dropdown-item" href="#">For Teams</a>
+                                        <a class="dropdown-item" href="#">For Airlines</a>
+                                        <a class="dropdown-item" href="#">For Religious Groups</a>
+                                        <a class="dropdown-item" href="#">For Government</a>
+                                        <a class="dropdown-item" href="#">For Emergency Services</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Shuttles</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Overview</a>
+                                        <a class="dropdown-item" href="#">For University & Campuses</a>
+                                        <a class="dropdown-item" href="#">For Hospitals & Healthcare Workers</a>
+                                        <a class="dropdown-item" href="#">For Airports</a>
+                                        <a class="dropdown-item" href="#">For Religious Groups</a>
+                                        <a class="dropdown-item" href="#">For Private Events</a>
+                                        <a class="dropdown-item" href="#">For Urgent & On Demand</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.charterup.com/operators"
+                                        target="_blank">Operators</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.charterup.com/investors"
+                                        target="_blank">Investors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.charterup.com/careers"
+                                        target="_blank">Careers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </nav>
+            </div>
+        </header>
+        <main role="main" class="inner cover">
+            <h2>Charter A Bus In Under 90 Seconds</h1>
+
+                <form id="form" method="post">
+                    <div>
+                        <label for="vehicles">Choose a vehicle:</label>
+                        <select name="vehicles" id="vehicles">
+                            <option value="charterbus">Charter Bus</option>
+                            <option value="minibus">Mini Bus</option>
+                            <option value="sprinter">Sprinter</option>
+                            <option value="partybus">Party Bus</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="limousine">Limousine</option>
+                            <option value="trolley">Trolley</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="amount">Number of vehicles:</label>
+                        <input type="number" id="amount" name="amount" placeholder="1" min="1" max="100">
+                    </div>
+                    <div>
+                        <label for="method">Choose a pricing method:</label>
+                        <select name="method" id="method">
+                            <option value="daily">Daily</option>
+                            <option value="hourly">Hourly</option>
+                            <option value="distance">Distance</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="distance">Number of days/hours/miles<span id="units"></span></label>
+                        <input type="number" id="distance" name="distance" placeholder="1" min="1" max="9000">
+                    </div>
+                    <div>
+                        <button id="submit" type="submit" onsubmit="return onSubmit()">
+                            Generate quote
+                        </button>
+                    </div>
+                </form>
+                <div id="result">
+                </div>
+        </main>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+              <p>By: <a href="https://jameswangdr.com/" target="_blank">James Wang</p>
+            </div>
+          </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="codingTest2.js"></script>
+</body>
+
+</html>

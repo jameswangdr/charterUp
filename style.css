@@ -1,0 +1,42 @@
+* {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+main {
+    padding: 1.5rem;
+}
+
+h2 {
+    padding: 1.5rem;
+}
+
+form {
+    padding: 1.5rem;
+}
+
+#submit {
+	background-color:#08a6f0;
+    border-radius:15px;
+    border: 1px solid #08a6f0;
+	display:inline-block;
+	cursor:pointer;
+    color:white;
+    font-weight: 700;
+	font-size: 1.5rem;
+	padding: 1rem;
+    text-decoration:none;
+    margin: 1.5rem;
+}
+#submit:hover {
+	background-color:#068CCB
+}
+
+#result {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
